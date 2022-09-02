@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Objects;
 
 import com.ibm.wala.classLoader.IMethod;
+import com.ibm.wala.classLoader.Language;
+import com.ibm.wala.core.util.config.AnalysisScopeReader;
 import com.ibm.wala.ipa.callgraph.AnalysisCache;
 import com.ibm.wala.ipa.callgraph.AnalysisCacheImpl;
 import com.ibm.wala.ipa.callgraph.AnalysisOptions;
@@ -18,12 +20,11 @@ import com.ibm.wala.ipa.cha.ClassHierarchyFactory;
 import com.ibm.wala.ssa.IR;
 import com.ibm.wala.ssa.SSAInstruction;
 import com.ibm.wala.types.ClassLoaderReference;
-import com.ibm.wala.util.config.AnalysisScopeReader;
 
 public class Main {
 
 	/**
-	 * Location of the file with a list of packages to exclusde from the analysis.
+	 * Location of the file with a list of packages to exclude from the analysis.
 	 */
 	private static final String EXCLUSIONS_FILE_PATH_NAME = "Java60RegressionExclusions.txt";
 
@@ -31,15 +32,15 @@ public class Main {
 		String classPath = args[0];
 
 		File exclusionsFile = new File(EXCLUSIONS_FILE_PATH_NAME);
-		AnalysisScope scope = AnalysisScopeReader.makeJavaBinaryAnalysisScope(classPath, exclusionsFile);
+		AnalysisScope scope = AnalysisScopeReader.instance.makeJavaBinaryAnalysisScope(classPath, exclusionsFile);
 
 		ClassHierarchy hierarchy = ClassHierarchyFactory.make(scope);
-		Iterable<Entrypoint> entrypoints = Util.makeMainEntrypoints(scope, hierarchy);
+		Iterable<Entrypoint> entrypoints = Util.makeMainEntrypoints(hierarchy);
 
 		AnalysisOptions options = new AnalysisOptions(scope, entrypoints);
 		AnalysisCache cache = new AnalysisCacheImpl();
 
-		CallGraphBuilder<?> builder = Util.makeZeroCFABuilder(options, cache, hierarchy, scope);
+		CallGraphBuilder<?> builder = Util.makeZeroCFABuilder(Language.JAVA, options, cache, hierarchy);
 		CallGraph graph = builder.makeCallGraph(options, null);
 
 		graph.forEach(node -> {

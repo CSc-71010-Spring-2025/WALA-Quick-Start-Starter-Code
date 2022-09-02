@@ -36,17 +36,17 @@
     <dependency>
         <groupId>com.ibm.wala</groupId>
         <artifactId>com.ibm.wala.core</artifactId>
-        <version>1.4.3</version>
+        <version>1.5.8</version>
     </dependency>
     <dependency>
         <groupId>com.ibm.wala</groupId>
         <artifactId>com.ibm.wala.util</artifactId>
-        <version>1.4.3</version>
+        <version>1.5.8</version>
     </dependency>
     <dependency>
     	<groupId>com.ibm.wala</groupId>
     	<artifactId>com.ibm.wala.shrike</artifactId>
-    	<version>1.4.3</version>
+    	<version>1.5.8</version>
     </dependency>
   </dependencies>
   <properties>
