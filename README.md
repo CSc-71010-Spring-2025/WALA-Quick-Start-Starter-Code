@@ -100,7 +100,7 @@ WALA does come, however, with some example driver programs that show you how to 
 
     That will produce `Test.class` in the `test` directory.
 
-1. Now, run the JavaViewerDriver using the option:
+1. Now, run the `JavaViewerDriver` using the option:
 
     ```bash
     java -cp com.ibm.wala.core/build/libs/com.ibm.wala.core-1.5.9-SNAPSHOT.jar:com.ibm.wala.util/build/libs/com.ibm.wala.util-1.5.9-SNAPSHOT.jar:com.ibm.wala.shrike/build/libs/com.ibm.wala.shrike-1.5.9-SNAPSHOT.jar com.ibm.wala.examples.drivers.JavaViewerDriver -appClassPath test
