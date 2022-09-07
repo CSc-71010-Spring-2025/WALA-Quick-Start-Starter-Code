@@ -71,7 +71,7 @@ public class Main {
 
 	/**
 	 * Check each instruction. TODO: Your changes should go in this method.
-	 * 
+	 *
 	 * @param instruction
 	 *            The instruction to be checked.
 	 */
