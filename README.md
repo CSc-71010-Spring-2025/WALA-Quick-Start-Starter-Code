@@ -115,3 +115,7 @@ For illustration purposes, we will use a Java program called jlex; this program 
     1. Total number of instructions in all methods that are branching statements. These include instances of interfaces `com.ibm.wala.ssa.SSAGotoInstruction`, `com.ibm.wala.ssa.SSAConditionalBranchInstruction`, and `com.ibm.wala.ssa.SSASwitchInstruction`. Strictly speaking, we also need to consider `com.ibm.wala.ssa.SSAThrowInstruction` (since it throws an exception and the flow of control jumps to the exception handler), but for now we will ignore exceptions and throw statements. The [WALA API documentation](https://wala.github.io/javadoc) may be helpful.
 1. Submit your code through GitHub by the deadline in Blackboard.
 1. Also submit, in Blackboard, answers to the questions above, as well as the numbers above for jlex.
+
+## Credits
+
+This is assignment is based on an assignment by Atanas Rountev.
