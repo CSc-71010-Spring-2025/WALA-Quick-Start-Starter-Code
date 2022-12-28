@@ -36,7 +36,7 @@ You will need the following for this exercise:
 
 1. Change directory (`cd`) to `WALA`.
 
-1. Check out a particular commit from WALA using `git checkout 0f02fb84eb38391d0dab327cea1bb361cd4562d9`.
+1. Check out a particular commit from WALA using `git checkout e24abb10cc330cfcee0f741865e218d01e63a453`.
 
 1. Set your `JAVA_HOME` environmental variable. The variable's value should hold the path of where your JDK is installed. **NOTE**: The installation will not work correctly if this variable is not set correctly. For example, on a Linux system, the JDK might be installed at: `/usr/lib/jvm/default-jdk`. To set the environmental variable on such a system using bash, one may issue the command: `export JAVA_HOME=/usr/lib/jvm/default-jdk`.
 
