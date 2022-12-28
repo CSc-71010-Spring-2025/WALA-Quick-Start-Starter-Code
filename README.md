@@ -66,8 +66,8 @@ WALA does come, however, with some example driver programs that show you how to 
 
     ```
     Exception in thread "main" java.lang.UnsupportedOperationException: expected command-line to include -appClassPath
-	at com.ibm.wala.examples.drivers.JavaViewerDriver.validateCommandLine(JavaViewerDriver.java:52)
-	at com.ibm.wala.examples.drivers.JavaViewerDriver.main(JavaViewerDriver.java:44)
+        at com.ibm.wala.examples.drivers.JavaViewerDriver.validateCommandLine(JavaViewerDriver.java:52)
+        at com.ibm.wala.examples.drivers.JavaViewerDriver.main(JavaViewerDriver.java:44)
     ```
 
     It just means that we're missing a command-line option.
