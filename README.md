@@ -7,7 +7,7 @@ Setting up and trying the TJ Watson Library for Analysis (WALA).
 You will need the following for this exercise:
 
 1. A strong and reliable internet connection.
-1. [git](https://git-scm.com/), the version control system.
+1. [Git](https://git-scm.com/), the version control system.
 1. [The Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html). **NOTE**: You *will* need **Java version 11** for this exercise! It will not work with later versions. Some systems allow you to switch between installed versions, e.g., on Ubuntu Linux, `sudo update-alternatives --config java` (select version 11).
 1. [maven](https://maven.apache.org/), the build system.
 1. [Gradle](https://gradle.org/), another build system.
