@@ -8,7 +8,7 @@ You will need the following for this exercise:
 
 1. A strong and reliable internet connection.
 1. [Git](https://git-scm.com/), the version control system.
-1. [The Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html). **NOTE**: You *will* need **Java version 11** for this exercise! It will not work with later versions. Some systems allow you to switch between installed versions, e.g., on Ubuntu Linux, `sudo update-alternatives --config java` (select version 11).
+1. [The Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 1. [maven](https://maven.apache.org/), the build system.
 1. [Gradle](https://gradle.org/), another build system.
 
@@ -16,13 +16,13 @@ You will need the following for this exercise:
 
 ### Ensure Java is Installed
 
-1. Check that you have java installed. On the command line, run: `java -version`. You should get something like:
+1. Check that you have java installed. On the command line, run: `java -version`. You should get something like (note that the version may not match):
     ```
     openjdk version "11.0.16" 2022-07-19
     OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu1)
     OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu1, mixed mode, sharing)
     ```
-1. Also make sure that you have the java compiler by running: `javac -version` and getting something like this:
+1. Also make sure that you have the java compiler by running: `javac -version` and getting something like this (note that the version may not match):
     ```
     javac 11.0.16
     ```
@@ -31,7 +31,6 @@ You will need the following for this exercise:
 
 1. On the command line, clone WALA: `git clone https://github.com/wala/WALA.git`. It might take a while as it's a large project. As such, make sure that you are on a strong network connection.
 1. Change directory (`cd`) to `WALA`.
-1. Check out a particular commit from WALA using `git checkout e24abb10cc330cfcee0f741865e218d01e63a453`.
 1. Set your `JAVA_HOME` environmental variable. The variable's value should hold the path of where your JDK is installed. **NOTE**: The installation will not work correctly if this variable is not set correctly. For example, on a Linux system, the JDK might be installed at: `/usr/lib/jvm/default-jdk`. To set the environmental variable on such a system using bash, one may issue the command: `export JAVA_HOME=/usr/lib/jvm/default-jdk`.
 1. Build WALA by running: `./gradlew clean build -x test`. This may also take a while as there are many dependencies to download.
 
@@ -40,12 +39,6 @@ You will need the following for this exercise:
 WALA is not really a "program" but rather a framework to help *create* programs that do program analysis. Note that WALA is not a transformation framework per se and is focused on analysis. There are other source-to-source transformations frameworks we will explore, such as the Eclipse SDK.
 
 WALA does come, however, with some example driver programs that show you how to use WALA for program analysis.
-
-<!-- 1. Once WALA has been built, change directories (`cd`) to a driver class directory: -->
-
-<!--     ```bash -->
-<!--     cd com.ibm.wala.core.tests/target/classes -->
-<!--     ``` -->
 
 1. Try to run the `JavaViewerDriver`, which allows you to view the "call graph", "class hierarchy", and "pointer analysis" of a given class path:
     ```bash
@@ -84,6 +77,8 @@ WALA does come, however, with some example driver programs that show you how to 
     ```bash
     java -cp com.ibm.wala.core/build/libs/com.ibm.wala.core-1.5.9-SNAPSHOT.jar:com.ibm.wala.util/build/libs/com.ibm.wala.util-1.5.9-SNAPSHOT.jar:com.ibm.wala.shrike/build/libs/com.ibm.wala.shrike-1.5.9-SNAPSHOT.jar com.ibm.wala.examples.drivers.JavaViewerDriver -appClassPath test
     ```
+    Replace "1.5.9" above with the version of WALA that you have built.
+
 1. A window should pop up with a list on the left-hand side pane. Select the entry for the `main()` method (`invokestatic < Application, LTest, main([Ljava/lang/String;)V > @5`). You'll see something that looks like assembly code on the right. This is a pretty-print version of the intermediate representation (IR) for the `main()` method used by WALA. This representation is called Shrike, and it is constructed from the bytecode of class `Test` (i.e., from file `Test.class`). Have a look inside to get some idea what is the IR for the input Java method `Test.main()`.
 1. Drill one level down from the `invokestatic` node to the node that reads `Node: < Application, LTest, main([Ljava/lang/String;)V > Context: Everywhere`. Select it. Notice the instruction at program counter (PC) 4 (the first number on the left) that corresponds to "line 4" in the original source. **Explain the following**:
     1. What is this instruction doing?
@@ -93,12 +88,10 @@ WALA does come, however, with some example driver programs that show you how to 
 
 For illustration purposes, we will use a Java program called jlex; this program is similar to the classic 'lex' scanner generator. First, we will focus on static analysis of the Jimple for program's methods. 
 
-<!-- 1. *Configure WALA properties.* At this point, You will need to set up a properties files. In the `com.ibm.wala.core` project, you need to copy the file [`dat/wala.properties.sample`](https://github.com/wala/WALA/tree/master/com.ibm.wala.core/dat/wala.properties.sample?view=markup) to `dat/wala.properties`. You need to then edit `wala.properties` to reflect your environment. See the properties file for the detailed instructions on what properties you must set. For this exercise, it suffices to set the `java_runtime_dir` property (which is mandatory) to the same value as `JAVA_HOME` that you set earlier. **NOTE:** on Windows all paths must be specified using '/' and not '\\'! -->
-
-1. Visit https://classroom.github.com/a/cWOH-65f and set up your repository.
+1. Visit https://classroom.github.com/a/MJd8dp2- and set up your repository.
 1. Clone your repository, for example:
     ```bash
-    git clone https://github.com/CSc-71010-CSCI-77100-Fall-2022/wala-quick-start-khatchad
+    git clone https://github.com/CSc-71010-Fall-2025/wala-quick-start-khatchad
     ```
 1. In the directory that gets created as a result of the clone, run the following:
     ```bash
