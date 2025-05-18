@@ -88,7 +88,7 @@ WALA does come, however, with some example driver programs that show you how to 
 
 For illustration purposes, we will use a Java program called jlex; this program is similar to the classic 'lex' scanner generator. First, we will focus on static analysis of the Jimple for program's methods. 
 
-1. Visit https://classroom.github.com/a/MJd8dp2- and set up your repository.
+1. Accept the [GitHub Classroom invitation] and set up your repository.
 1. Clone your repository, for example:
     ```bash
     git clone https://github.com/CSc-71010-Fall-2025/wala-quick-start-khatchad
@@ -112,3 +112,5 @@ For illustration purposes, we will use a Java program called jlex; this program 
 ## Credits
 
 This is assignment is based on an assignment by Atanas Rountev.
+
+[GitHub Classroom invitation]: https://classroom.github.com/a/hQy-Ko52
