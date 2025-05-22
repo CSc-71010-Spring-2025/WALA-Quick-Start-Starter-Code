@@ -44,6 +44,8 @@ WALA does come, however, with some example driver programs that show you how to 
     ```bash
     java -cp com.ibm.wala.core/build/libs/com.ibm.wala.core-1.5.9-SNAPSHOT.jar:com.ibm.wala.util/build/libs/com.ibm.wala.util-1.5.9-SNAPSHOT.jar:com.ibm.wala.shrike/build/libs/com.ibm.wala.shrike-1.5.9-SNAPSHOT.jar com.ibm.wala.examples.drivers.JavaViewerDriver
     ```
+    Replace "1.5.9" above with the version of WALA that you have built.
+
     **NOTE**: We are setting the class path using the `-cp` option above but you can also set it using the `CLASSPATH` environmental variable for convenience.
 1. You should see an error like this:
     ```
@@ -77,7 +79,7 @@ WALA does come, however, with some example driver programs that show you how to 
     ```bash
     java -cp com.ibm.wala.core/build/libs/com.ibm.wala.core-1.5.9-SNAPSHOT.jar:com.ibm.wala.util/build/libs/com.ibm.wala.util-1.5.9-SNAPSHOT.jar:com.ibm.wala.shrike/build/libs/com.ibm.wala.shrike-1.5.9-SNAPSHOT.jar com.ibm.wala.examples.drivers.JavaViewerDriver -appClassPath test
     ```
-    Replace "1.5.9" above with the version of WALA that you have built.
+    Again, replace "1.5.9" above with the version of WALA that you have built.
 
 1. A window should pop up with a list on the left-hand side pane. Select the entry for the `main()` method (`invokestatic < Application, LTest, main([Ljava/lang/String;)V > @5`). You'll see something that looks like assembly code on the right. This is a pretty-print version of the intermediate representation (IR) for the `main()` method used by WALA. This representation is called Shrike, and it is constructed from the bytecode of class `Test` (i.e., from file `Test.class`). Have a look inside to get some idea what is the IR for the input Java method `Test.main()`.
 1. Drill one level down from the `invokestatic` node to the node that reads `Node: < Application, LTest, main([Ljava/lang/String;)V > Context: Everywhere`. Select it. Notice the instruction at program counter (PC) 4 (the first number on the left) that corresponds to "line 4" in the original source. **Explain the following**:
